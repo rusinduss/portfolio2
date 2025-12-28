@@ -8,10 +8,20 @@ gsap.registerPlugin(useGSAP);
 
 const Work = () => {
   useGSAP(() => {
+    // Check if screen is wide enough for horizontal scroll
+    const isDesktop = window.innerWidth > 1024;
+
+    if (!isDesktop) {
+      // On mobile/tablet, don't apply horizontal scroll animation
+      return;
+    }
+
     let translateX: number = 0;
 
     function setTranslateX() {
       const box = document.getElementsByClassName("work-box");
+      if (!box.length) return;
+
       const rectLeft = document
         .querySelector(".work-container")!
         .getBoundingClientRect().left;
@@ -28,10 +38,11 @@ const Work = () => {
       scrollTrigger: {
         trigger: ".work-section",
         start: "top top",
-        end: `+=${translateX}`, // Use actual scroll width
+        end: `+=${translateX}`,
         scrub: true,
         pin: true,
         id: "work",
+        invalidateOnRefresh: true,
       },
     });
 
@@ -40,7 +51,7 @@ const Work = () => {
       ease: "none",
     });
 
-    // Clean up (optional, good practice)
+    // Clean up
     return () => {
       timeline.kill();
       ScrollTrigger.getById("work")?.kill();

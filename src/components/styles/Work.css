@@ -210,3 +210,172 @@
     height: auto;
   }
 }
+
+/* Mobile and Tablet Styles */
+@media only screen and (max-width: 1024px) {
+  .work-section {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
+
+  .work-section h2 {
+    font-size: 50px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
+
+  .work-flex {
+    flex-direction: column;
+    margin-left: 0;
+    padding-right: 0;
+    height: auto;
+    gap: 0;
+  }
+
+  .work-box {
+    width: 100%;
+    padding: 50px 30px;
+    border-right: none;
+    border-bottom: 1px solid #363636;
+    gap: 40px;
+  }
+
+  .work-flex .work-box:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .work-flex .work-box:last-child {
+    border-bottom: none;
+  }
+
+  .work-flex::before,
+  .work-flex::after {
+    display: none;
+  }
+
+  .work-title h3 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .work-info h4 {
+    font-size: 16px;
+  }
+
+  .work-info p {
+    font-size: 14px;
+  }
+
+  .work-info > p {
+    width: 100%;
+  }
+
+  .work-image img {
+    max-height: 300px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .work-section h2 {
+    font-size: 40px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  .work-box {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .work-title {
+    margin-bottom: 15px;
+  }
+
+  .work-title h3 {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  .work-info h4 {
+    font-size: 15px;
+  }
+
+  .work-info p {
+    font-size: 13px;
+  }
+
+  .work-image img {
+    max-height: 250px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .work-section {
+    padding-bottom: 30px;
+  }
+
+  .work-section h2 {
+    font-size: 32px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+  }
+
+  .work-box {
+    padding: 30px 15px;
+    gap: 25px;
+  }
+
+  .work-title h3 {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .work-title > div h4 {
+    font-size: 14px;
+  }
+
+  .work-title > div p {
+    font-size: 12px;
+  }
+
+  .work-info h4 {
+    font-size: 14px;
+  }
+
+  .work-info p {
+    font-size: 12px;
+  }
+
+  .work-image img {
+    max-height: 200px;
+  }
+
+  .work-link {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .work-section h2 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .work-box {
+    padding: 25px 10px;
+    gap: 20px;
+  }
+
+  .work-title h3 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .work-image img {
+    max-height: 180px;
+  }
+}
