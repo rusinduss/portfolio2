@@ -16,8 +16,23 @@ const setCharacter = (
 
   const loadCharacter = async () => {
     return new Promise<GLTF | null>((resolve, reject) => {
-      decryptFile("/models/character.enc", "Character3D#@")
+      // Track decryption progress (0-20%)
+      if (onProgress) onProgress(0);
+
+      decryptFile(
+        "/models/character.enc",
+        "Character3D#@",
+        (decryptProgress) => {
+          // Map decryption progress to 0-20% of total
+          if (onProgress) {
+            onProgress(Math.floor(decryptProgress * 0.2));
+          }
+        }
+      )
         .then((encryptedBlob) => {
+          // Decryption complete - 20%
+          if (onProgress) onProgress(20);
+
           const blobUrl = URL.createObjectURL(new Blob([encryptedBlob]));
 
           let character: THREE.Object3D;
@@ -25,9 +40,15 @@ const setCharacter = (
             blobUrl,
             async (gltf) => {
               character = gltf.scene;
-              // Report 100% when loading complete
-              if (onProgress) onProgress(100);
+
+              // Model loaded - 90%
+              if (onProgress) onProgress(90);
+
               await renderer.compileAsync(character, camera, scene);
+
+              // Compilation complete - 95%
+              if (onProgress) onProgress(95);
+
               character.traverse((child: THREE.Object3D) => {
                 if (child instanceof THREE.Mesh) {
                   child.castShadow = true;
@@ -35,6 +56,10 @@ const setCharacter = (
                   child.frustumCulled = true;
                 }
               });
+
+              // Final setup complete - 100%
+              if (onProgress) onProgress(100);
+
               resolve(gltf);
               setCharTimeline(character, camera);
               setAllTimeline();
@@ -43,10 +68,22 @@ const setCharacter = (
               dracoLoader.dispose();
             },
             (xhr) => {
-              // Report actual loading progress
-              if (xhr.lengthComputable && onProgress) {
-                const percentComplete = (xhr.loaded / xhr.total) * 100;
-                onProgress(Math.min(percentComplete, 99));
+              // Actual model download progress (20% to 90%)
+              if (xhr.lengthComputable) {
+                const loadProgress = (xhr.loaded / xhr.total) * 70; // 70% of total progress
+                const totalProgress = 20 + loadProgress; // Add decryption progress
+                if (onProgress) {
+                  onProgress(Math.floor(totalProgress));
+                }
+              } else {
+                // If not computable, estimate based on loaded bytes
+                const estimatedProgress = Math.min(
+                  20 + (xhr.loaded / 1000000) * 10,
+                  85
+                );
+                if (onProgress) {
+                  onProgress(Math.floor(estimatedProgress));
+                }
               }
             },
             (error) => {
