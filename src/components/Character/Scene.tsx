@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import setCharacter from "./utils/character";
 import setLighting from "./utils/lighting";
-// import { useLoading } from "../../context/LoadingProvider";
 import handleResize from "./utils/resizeUtils";
 import {
   handleMouseMove,
@@ -59,7 +58,7 @@ const Scene = () => {
           // Wait a bit after reaching 100% before hiding loading screen
           setTimeout(() => {
             setIsLoading(false);
-          }, 3000);
+          }, 3500);
         }
       };
 

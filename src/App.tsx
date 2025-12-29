@@ -2,7 +2,7 @@ import "./App.css";
 import CharacterModel from "./components/Character";
 import MainContainer from "./components/MainContainer";
 
-const App = () => {
+function App() {
   return (
     <main className="main-body">
       <MainContainer>
@@ -10,6 +10,6 @@ const App = () => {
       </MainContainer>
     </main>
   );
-};
+}
 
 export default App;
