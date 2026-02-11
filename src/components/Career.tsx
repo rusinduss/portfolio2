@@ -48,7 +48,21 @@ const Career = () => {
             <div className="career-info-in">
               <div className="career-role">
                 <h4>Software Engineer Intern</h4>
-                <h5>WSO2</h5>
+                <h5>CEB</h5>
+              </div>
+              <h3>NOW</h3>
+            </div>
+            <p>
+              Working on enterprise-level solutions and contributing to scalable
+              software systems. Applying full-stack development skills with
+              focus on backend technologies, API development, and system
+              architecture. Collaborating with experienced engineers on
+              cutting-edge projects.
+            </p>
+             <div className="career-info-in">
+              <div className="career-role">
+                <h4> Associate Software Engineer </h4>
+                <h5>Legacy Health LLC</h5>
               </div>
               <h3>NOW</h3>
             </div>

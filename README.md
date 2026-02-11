@@ -57,7 +57,7 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/udithavithanage/3d-web.git
+git clone https://github.com/rusinduvithanage/3d-web.git
 cd Portfolio-Website
 ```
 

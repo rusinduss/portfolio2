@@ -11,24 +11,21 @@ const Contact = () => {
           <div className="contact-box">
             <h4>Email</h4>
             <p>
-              <a
-                href="mailto:udithavithanage358@gmail.com"
-                data-cursor="disable"
-              >
-                udithavithanage358@gmail.com
+              <a href="mailto:rusindunm@gmail.com" data-cursor="disable">
+                rusindusanjana358@gmail.com
               </a>
             </p>
             <h4>Phone</h4>
             <p>
               <a href="tel:+94713506655" data-cursor="disable">
-                +94 71 350 66 55
+                +94 76 875 67 11
               </a>
             </p>
           </div>
           <div className="contact-box">
             <h4>Social</h4>
             <a
-              href="https://github.com/udithavithanage"
+              href="https://github.com/rusindusanjana"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -36,7 +33,7 @@ const Contact = () => {
               Github <MdArrowOutward />
             </a>
             <a
-              href="https://www.linkedin.com/in/uditha-vithanage-06589631b"
+              href="https://www.linkedin.com/in/rusindu-sanjana-06589631b"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -44,7 +41,7 @@ const Contact = () => {
               Linkedin <MdArrowOutward />
             </a>
             <a
-              href="https://x.com/uditha_2003"
+              href="https://x.com/rusindu_2003"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -52,7 +49,7 @@ const Contact = () => {
               Twitter <MdArrowOutward />
             </a>
             <a
-              href="https://www.instagram.com/uditha_vithanage"
+              href="https://www.instagram.com/rusindu_sanjana"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -62,7 +59,7 @@ const Contact = () => {
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Uditha Vithanage</span>
+              Designed and Developed <br /> by <span>Rusindu Sanjana</span>
             </h2>
             <h5>
               <MdCopyright /> 2025
